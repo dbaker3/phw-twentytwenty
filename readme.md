@@ -21,8 +21,8 @@ Example:
 [/twentytwenty]
 
 <div id="twentytwenty-caption"></div>
-<div id="prevphoto" class=""><span class="arrow-prev"></span></div>
-<div id="nextphoto" class=""><span class="arrow-next"></span></div>
+<div id="prevphoto"><span class="arrow-prev"></span></div>
+<div id="nextphoto"><span class="arrow-next"></span></div>
 
 </div>
 ```
