@@ -2,7 +2,7 @@
 ## Before-and-after WordPress plugin modified to include an image carousel
 ### Forked from the Zurb TwentyTwenty plugin http://zurb.com/playground/twentytwenty
 
-Use as described below in the original readme. To use the image carousel: 
+Use as described below in the original readme. To use the image carousel, do the following in the WordPress page/post editor: 
 + Surround your shortcodes in a `div` with `id="twentytwenty-slider"`
 + Include a caption, if desired with `<div id="twentytwenty-caption"></div>`
 + Include next/previous buttons
