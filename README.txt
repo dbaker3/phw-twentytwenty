@@ -1,3 +1,34 @@
+# phw-twentytwenty
+## Before-and-after WordPress plugin modified to include an image carousel
+### Forked from the Zurb TwentyTwenty plugin http://zurb.com/playground/twentytwenty
+
+Use as described below in the original readme. To use the image carousel: 
++ Surround your shortcodes in a `div` with `id="twentytwenty-slider"`
++ Include a caption, if desired with `<div id="twentytwenty-caption"></div>`
++ Include next/previous buttons
+
+Example:
+```
+<div id="twentytwenty-slider">
+[twentytwenty]
+<img src="1before.jpg" data-caption="This is what it looked like before and after"/>
+<img src="2after.jpg"/>
+[/twentytwenty]
+
+[twentytwenty]
+<img src="2before.jpg" data-caption="This is another cool before and after example"/>
+<img src="2after.jpg"/>
+[/twentytwenty]
+
+<div id="twentytwenty-caption"></div>
+<div id="prevphoto" class=""><span class="arrow-prev"></span></div>
+<div id="nextphoto" class=""><span class="arrow-next"></span></div>
+
+</div>
+```
+
+## Below is the original readme file:
+
 === TwentyTwenty ===
 Contributors: cs123
 Tags: images, before-and-after, before and after, comparison, slider, zurb, twentytwenty, twenty twenty
