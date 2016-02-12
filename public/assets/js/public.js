@@ -12,7 +12,11 @@
 
 }(jQuery));
 
-/* A custom image slider - dabaker 2/2016 */
+/* A custom image slider and some other fixes - dabaker 2/2016 */
+/* Instructions to show before/after images in an image slider/carousel:
+	-Wrap multiple [twentytwenty] shortcodes in a <div id="twentytwenty-slider"></div> tag
+	-Include caption text in a "data-caption" attribute on the before <img> tag of each image group
+*/
 function phwCustomStuff() {
 
     var numPhotos = jQuery('.twentytwenty-wrapper').length;
@@ -36,6 +40,7 @@ function phwCustomStuff() {
     		jQuery('.twentytwenty-wrapper').eq(currentPhoto).show();
     	}
     	jQuery('#twentytwenty-caption').html(jQuery('.twentytwenty-container').eq(currentPhoto).attr('data-caption'));
+    	resetPhoto();
     });
     
     jQuery('#prevphoto').click(function() {
@@ -50,6 +55,20 @@ function phwCustomStuff() {
     		jQuery('.twentytwenty-wrapper').eq(currentPhoto).show();
     	}
 		jQuery('#twentytwenty-caption').html(jQuery('.twentytwenty-container').eq(currentPhoto).attr('data-caption'));
+		resetPhoto();
     });
+
+	/* Fix height on resize/rotate of window */
+	jQuery( window ).resize(function() {  
+  		var imgHeight = jQuery('#twentytwenty-slider').height() - 40;
+  		jQuery('.twentytwenty-container').css('height',imgHeight+'px');
+	});
     
+}
+
+/* Move slider back to middle on photo view | dabaker 2/2016 */
+function resetPhoto() {
+	var imgWidth = jQuery('#twentytwenty-slider').width()/2
+	jQuery('.twentytwenty-before').css('clip','rect(0, ' + imgWidth + 'px,666px,0)')
+	jQuery('.twentytwenty-handle').css('left','50%');
 }
