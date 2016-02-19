@@ -266,6 +266,8 @@ class TwentyTwenty {
 		wp_register_script( $this->plugin_slug . '-jquery-event-move', plugins_url( 'assets/js/jquery.event.move.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 		wp_register_script( $this->plugin_slug . '-twentytwenty', plugins_url( 'assets/js/jquery.twentytwenty.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 		wp_register_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		/* dbaker3 - added css clip animation script */
+		wp_register_script( $this->plugin_slug . '-jquery-animate-clip', plugins_url( 'assets/js/jquery.animate.clip.js', __FILE__ ), array( 'jquery' ), self::VERSION );	
 	}
 
 	public function twentytwenty_shortcode( $atts, $content = null ) {

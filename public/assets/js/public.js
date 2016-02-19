@@ -6,6 +6,7 @@
 		$(window).load(function() {
   			$(".twentytwenty").twentytwenty();
   			phwCustomStuff();
+  			animateSlider();
 		});
 
 	});
@@ -66,9 +67,37 @@ function phwCustomStuff() {
     
 }
 
-/* Move slider back to middle on photo view | dabaker 2/2016 */
+/* Move slider back to middle on photo view */
 function resetPhoto() {
 	var imgWidth = jQuery('#twentytwenty-slider').width()/2
 	jQuery('.twentytwenty-before').css('clip','rect(0, ' + imgWidth + 'px,666px,0)')
 	jQuery('.twentytwenty-handle').css('left','50%');
+}
+
+
+/* Move slider left and back a little to demonstrate use */
+function animateSlider() {
+	var imgWidth = jQuery('#twentytwenty-slider').width()/2;
+	
+	jQuery('.twentytwenty-handle').delay(1000).animate({
+	    left:"-=100",
+	  }, 1000, function() {
+	    // Animation complete.
+	  });
+	jQuery('.twentytwenty-before').delay(1000).animate({
+	    clip: 'rect(0px ' + (imgWidth - 100).toString() + 'px 666px 0px)'
+	  }, 1000, function() {
+	    // Animation complete.
+	  });
+	
+	jQuery('.twentytwenty-handle').animate({
+	    left:"+=100",
+	  }, 1000, function() {
+	    // Animation complete.
+	  });
+	jQuery('.twentytwenty-before').animate({
+	    clip: 'rect(0px ' + imgWidth + 'px 666px 0px)'
+	  }, 1000, function() {
+	    // Animation complete.
+	  });
 }
